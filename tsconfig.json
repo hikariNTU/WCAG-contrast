@@ -18,17 +18,16 @@
     "esModuleInterop": true,
     "newLine": "lf",
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "declaration": true
   },
   "include": [
-    "./packages/*/src/**/*",
-    "./packages/*/script/**/*",
-    "./temp/**/*",
-    "./packages/*/*.d.ts"
+    "./tsconfig.json"
   ],
   "exclude": [
     "**/node_modules/**/*",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.test.ts"
   ],
   "typeAcquisition": {
     "enable": true
