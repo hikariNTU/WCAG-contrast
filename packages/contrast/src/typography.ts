@@ -3,9 +3,10 @@ const PT_THRESHOLD = 18
 const PT_BOLD_THRESHOLD = 14
 const BOLD_THRESHOLD = 700
 
+export type RelativeFontWeight = 'bolder' | 'lighter'
 export type FontWeight = number | string | undefined
 export type FontSizeUnit = 'px' | 'pt'
-export type LargeTextProps = {
+export interface LargeTextProps {
   size: number
   weight?: FontWeight
   inheritWeight?: FontWeight
@@ -42,12 +43,40 @@ export const fontWeightLUT: Record<string, number> = {
  */
 export const fontRelativeWeights = [100, 400, 700, 900] as const
 
-export function getFontWeight(
+/**
+ * Convert relative weight "lighter" or "bolder" to matching weight with given inherit weight
+ * @param weight "lighter" or "bolder" in CSS font-weight
+ * @param inherited inherited weight number
+ */
+export const getRelativeWeight = (
+  weight: RelativeFontWeight,
+  inherited: number
+) => {
+  if (weight === 'bolder') {
+    if (inherited < 400) return 400
+    if (inherited < 700) return 700
+    return 900
+  } else {
+    if (inherited > 700) return 700
+    if (inherited > 400) return 400
+    return 100
+  }
+}
+
+export const getFontWeight = (
   weight: FontWeight,
   inherit: FontWeight = undefined
-) {
+): number | undefined => {
   if (weight === undefined) return
   if (typeof weight === 'number') return weight
+  if (weight === 'lighter' || weight === 'bolder') {
+    const inherited = getFontWeight(inherit)
+    if (!inherited) {
+      return
+    }
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return getRelativeWeight(weight, getFontWeight(inherited)!)
+  }
   return fontWeightLUT[weight]
 }
 
