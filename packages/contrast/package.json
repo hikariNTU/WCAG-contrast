@@ -1,0 +1,35 @@
+{
+  "name": "wcag-contrast-util",
+  "version": "0.1.0",
+  "description": "helper function for WCAG contrast criterion",
+  "keywords": [
+    "WCAG",
+    "contrast",
+    "color contrast",
+    "luminance"
+  ],
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6.25.0"
+  },
+  "files": [
+    "dist/",
+    "package.json"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "vitest",
+    "build": "vite build",
+    "build:type": "tsc --declaration --emitDeclarationOnly --project ./tsconfig.json"
+  },
+  "author": "hikariNTU",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hikariNTU/WCAG-contrast",
+    "directory": "/packages/contrast"
+  }
+}

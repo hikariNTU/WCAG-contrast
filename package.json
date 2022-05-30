@@ -2,7 +2,7 @@
   "name": "wcag-contrast",
   "private": "true",
   "version": "1.0.0",
-  "description": "helper function for WCAG contrast criterion",
+  "description": "WCAG contrast criterion",
   "keywords": [
     "WCAG",
     "contrast",
@@ -32,9 +32,10 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1",
-    "tsm": "^2.2.1",
+    "rollup": "^2.75.3",
     "typescript": "^4.6.0",
-    "vite": "^2.8.0",
+    "vite": "^2.9.0",
+    "vite-plugin-dts": "^1.2.0",
     "vitest": "^0.13.0"
   }
 }
