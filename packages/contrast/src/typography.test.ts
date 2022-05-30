@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { fontWeightLUT, isLargeText } from './typography'
+import { fontWeightLUT, getFontWeight, isLargeText } from './typography'
 
 describe('typography', () => {
   it('fontWeightLUT map variants to number', () => {
@@ -8,6 +8,15 @@ describe('typography', () => {
     expect(fontWeightLUT['medium']).toBe(500)
     expect(fontWeightLUT['black']).toBe(900)
     expect(fontWeightLUT['extra-light']).toBe(200)
+  })
+
+  it('getFontWeight', () => {
+    expect(getFontWeight('bold')).toBe(700)
+    expect(getFontWeight('bolder', 500)).toBe(700)
+    expect(getFontWeight('lighter', 500)).toBe(400)
+    expect(getFontWeight(undefined)).toBeUndefined()
+    expect(getFontWeight('lighter', undefined)).toBeUndefined()
+    expect(getFontWeight('lighter', 'bolder')).toBeUndefined()
   })
 
   it('determine large text', () => {
