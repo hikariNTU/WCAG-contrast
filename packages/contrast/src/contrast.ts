@@ -2,11 +2,14 @@ import { fromHEX } from './color'
 import { toRelativeLuminance } from './luminance'
 import { isLargeText, LargeTextProps } from './typography'
 
-interface TextNodeParam extends LargeTextProps {
+export interface TextNodeParam extends LargeTextProps {
   color: string
 }
-type CheckerFunction = (text: TextNodeParam, background: string) => boolean
-type CriterionThreshold = {
+export type CheckerFunction = (
+  text: TextNodeParam,
+  background: string
+) => boolean
+export type CriterionThreshold = {
   /** Normal text threshold */
   t1: number
   /** Large Text threshold */
@@ -29,7 +32,7 @@ export const getContrastRatio = (c1: string, c2: string): number => {
   return l1 > l2 ? l1 / l2 : l2 / l1
 }
 
-const isPassCriteria = (
+export const isPassCriteria = (
   text: TextNodeParam,
   background: string,
   { t1, t2 }: CriterionThreshold = { t1: AA_THRESHOLD, t2: AA_LARGE_THRESHOLD }

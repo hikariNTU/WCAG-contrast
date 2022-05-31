@@ -1,0 +1,12 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "WCAG Contrast Util",
+  "entryPoints": [
+    "../contrast/src/index.ts"
+  ],
+  "out": "dist",
+  "tsconfig": "../contrast/tsconfig.json",
+  "exclude": [
+    "**/*.test.ts"
+  ]
+}
