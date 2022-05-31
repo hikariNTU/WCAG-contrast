@@ -4,6 +4,25 @@
   <h1>WCAG-Contrast</h1>
 </a>
 <p>helper function for WCAG contrast criterion</p>
+<ul>
+<li>Fully Typed ✅</li>
+<li>ES module 📦</li>
+<li>function based api ⚒</li>
+</ul>
+<p><a href="https://hikarintu.github.io/WCAG-contrast/">View full typescript document</a> - created by <strong>TypeDoc</strong></p>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<p>WIP:</p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> </span><span class="hl-0">wcag</span><span class="hl-1">-</span><span class="hl-0">contrast</span><span class="hl-1">-</span><span class="hl-0">util</span>
+</code></pre>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<pre><code class="language-js"><span class="hl-2">import</span><span class="hl-1"> {</span><span class="hl-0">isAA</span><span class="hl-1">} </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;wcag-contrast-util&#39;</span><br/><br/><span class="hl-4">it</span><span class="hl-1">(</span><span class="hl-3">&#39;check AA and AAA&#39;</span><span class="hl-1">, () </span><span class="hl-5">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-6">// 6.38</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">A</span><span class="hl-1"> = { </span><span class="hl-0">color:</span><span class="hl-1"> </span><span class="hl-3">&#39;#57606A&#39;</span><span class="hl-1">, </span><span class="hl-0">size:</span><span class="hl-1"> </span><span class="hl-8">14</span><span class="hl-1"> }</span><br/><span class="hl-1">  </span><span class="hl-6">// 5.19</span><br/><span class="hl-1">  </span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">B</span><span class="hl-1"> = { </span><span class="hl-0">color:</span><span class="hl-1"> </span><span class="hl-3">&#39;#0969DA&#39;</span><span class="hl-1">, </span><span class="hl-0">size:</span><span class="hl-1"> </span><span class="hl-8">14</span><span class="hl-1"> }</span><br/><br/><span class="hl-1">  </span><span class="hl-4">expect</span><span class="hl-1">(</span><span class="hl-4">isAA</span><span class="hl-1">(</span><span class="hl-7">A</span><span class="hl-1">, </span><span class="hl-3">&#39;#FFF&#39;</span><span class="hl-1">)).</span><span class="hl-4">toBe</span><span class="hl-1">(</span><span class="hl-5">true</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-4">expect</span><span class="hl-1">(</span><span class="hl-4">isAA</span><span class="hl-1">(</span><span class="hl-7">B</span><span class="hl-1">, </span><span class="hl-3">&#39;#FFF&#39;</span><span class="hl-1">)).</span><span class="hl-4">toBe</span><span class="hl-1">(</span><span class="hl-5">true</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-4">expect</span><span class="hl-1">(</span><span class="hl-4">isAAA</span><span class="hl-1">(</span><span class="hl-7">B</span><span class="hl-1">, </span><span class="hl-3">&#39;#FFF&#39;</span><span class="hl-1">)).</span><span class="hl-4">toBe</span><span class="hl-1">(</span><span class="hl-5">false</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-4">expect</span><span class="hl-1">(</span><span class="hl-4">isAAA</span><span class="hl-1">(</span><span class="hl-7">A</span><span class="hl-1">, </span><span class="hl-3">&#39;#FFF&#39;</span><span class="hl-1">)).</span><span class="hl-4">toBe</span><span class="hl-1">(</span><span class="hl-5">false</span><span class="hl-1">)</span><br/><span class="hl-1">  </span><span class="hl-4">expect</span><span class="hl-1">(</span><span class="hl-4">isAAA</span><span class="hl-1">({ ...</span><span class="hl-7">A</span><span class="hl-1">, </span><span class="hl-0">size:</span><span class="hl-1"> </span><span class="hl-8">24</span><span class="hl-1"> }, </span><span class="hl-3">&#39;#FFF&#39;</span><span class="hl-1">)).</span><span class="hl-4">toBe</span><span class="hl-1">(</span><span class="hl-5">true</span><span class="hl-1">)</span><br/><span class="hl-1">})</span>
+</code></pre>
 
 <a href="#develop" id="develop" style="color: inherit; text-decoration: none;">
   <h2>Develop</h2>
