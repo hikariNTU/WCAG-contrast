@@ -35,6 +35,7 @@ jobs:
         run: pnpm test run
 
   build:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:

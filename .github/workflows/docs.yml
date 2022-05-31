@@ -1,0 +1,40 @@
+name: build docs
+permissions: 
+  contents: write
+
+on:
+  workflow_run:
+    workflows: CI
+    branches: main
+    types: completed
+
+jobs:
+  build-and-deploy-docs:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Set node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build Docs
+        run: pnpm --filter docs build
+      
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: docs
+          folder: packages/docs/dist
+
+
+

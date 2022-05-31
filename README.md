@@ -1,3 +1,5 @@
+[![CI](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml/badge.svg)](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml)
+
 # WCAG-Contrast
 helper function for WCAG contrast criterion
 
