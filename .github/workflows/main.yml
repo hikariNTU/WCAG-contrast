@@ -27,19 +27,44 @@ jobs:
         with:
           node-version: 16.x
           cache: pnpm
-      
+
       - name: Install
         run: pnpm install --frozen-lockfile
-      
+
       - name: Test
         run: pnpm test run
 
   build:
+    if: github.ref_name == 'main'
     needs: test
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Stub
-        run: echo Not building
+      - name: Check version changes
+        uses: EndBug/version-check@v1
+        id: check
+
+      - name: Set node
+        if: steps.check.outputs.changed == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Install pnpm
+        if: steps.check.outputs.changed == 'true'
+        uses: pnpm/action-setup@v2
+
+      - name: Install
+        if: steps.check.outputs.changed == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        if: steps.check.outputs.changed == 'true'
+        run: pnpm build --filter wcag-contrast-util
+
+      - name: Publish
+        if: steps.check.outputs.changed == 'true'
+        run: pnpm publish --dry-run --filter wcag-contrast-util

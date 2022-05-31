@@ -1,12 +1,14 @@
 name: build docs
-permissions: 
+permissions:
   contents: write
 
 on:
   workflow_run:
-    workflows: CI
+    workflows:
+      - CI
     branches: main
-    types: completed
+    types:
+      - completed
 
 jobs:
   build-and-deploy-docs:
@@ -26,15 +28,12 @@ jobs:
 
       - name: Install
         run: pnpm install --frozen-lockfile
-      
+
       - name: Build Docs
         run: pnpm --filter docs build
-      
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs
           folder: packages/docs/dist
-
-
-
