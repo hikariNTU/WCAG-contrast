@@ -12,6 +12,12 @@ on:
       - next
 
   workflow_dispatch:
+    inputs:
+      force-publish:
+        description: trigger publish pipeline manually
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   test:
@@ -69,4 +75,4 @@ jobs:
 
       - name: Publish
         if: steps.check.outputs.changed == 'true'
-        run: pnpm publish --dry-run --filter wcag-contrast-util
+        run: pnpm publish --filter wcag-contrast-util
