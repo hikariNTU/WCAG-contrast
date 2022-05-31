@@ -1,6 +1,6 @@
 {
   "name": "wcag-contrast-util",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "helper function for WCAG contrast criterion",
   "keywords": [
     "WCAG",
@@ -22,8 +22,7 @@
   "sideEffects": false,
   "scripts": {
     "test": "vitest",
-    "build": "vite build",
-    "build:type": "tsc --declaration --emitDeclarationOnly --project ./tsconfig.json"
+    "build": "vite build"
   },
   "author": "hikariNTU",
   "license": "MIT",

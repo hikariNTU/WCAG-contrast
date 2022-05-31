@@ -67,12 +67,12 @@ jobs:
 
       - name: Install
         if: steps.check.outputs.changed == 'true'
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build
         if: steps.check.outputs.changed == 'true'
-        run: pnpm build --filter wcag-contrast-util
+        run: pnpm --filter wcag-contrast-util run build
 
       - name: Publish
         if: steps.check.outputs.changed == 'true'
-        run: pnpm publish --filter wcag-contrast-util
+        run: pnpm --filter wcag-contrast-util publish
