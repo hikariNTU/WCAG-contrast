@@ -1,14 +1,25 @@
 [![CI](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml/badge.svg)](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml)
-![npm](https://img.shields.io/npm/v/wcag-contrast-util)
+[![npm](https://img.shields.io/npm/v/wcag-contrast-util)](https://www.npmjs.com/package/wcag-contrast-util)
 
 # WCAG Contrast Util
-helper function for WCAG contrast criterion
-
-- Fully Typed ✅
-- ES module 📦
-- function based api ⚒
+Helper function for WCAG contrast criteria
 
 [View full typescript document](https://hikarintu.github.io/WCAG-contrast/) - created by **TypeDoc**
+
+**Features**
+
+- 🌈 color from `#HEX` with level-4 color support (3,4,6,8 digit)
+- 🎨 flatten multiple translucent colors into one color
+- 📏 Typography helper for large text
+- 💡 Luminance contrast helper with different threshold
+- 📅 More features are coming up...
+
+**What we got**
+
+- Written in TypeScript with docs 📃
+- Fully Tested ✅
+- Ship with tree shakable ES module 📦
+- function based api 🤝
 
 ## Install
 ```
@@ -19,7 +30,7 @@ npm install wcag-contrast-util
 
 **All-in-one Contrast Function**
 ```js
-import {isAA} from 'wcag-contrast-util'
+import { isAA } from 'wcag-contrast-util'
 
 it('check AA and AAA', () => {
   // 6.38

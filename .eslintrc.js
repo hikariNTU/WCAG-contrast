@@ -19,5 +19,6 @@ module.exports = {
     'linebreak-style': ['warn', 'unix'],
     quotes: ['warn', 'single'],
     semi: ['warn', 'never'],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
   },
 }

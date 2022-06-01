@@ -1,23 +1,34 @@
 [![CI](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml/badge.svg)](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml)
-![npm](https://img.shields.io/npm/v/wcag-contrast-util)
+[![npm](https://img.shields.io/npm/v/wcag-contrast-util)](https://www.npmjs.com/package/wcag-contrast-util)
 
-# WCAG-Contrast
-helper function for WCAG contrast criterion
-
-- Fully Typed ✅
-- ES module 📦
-- function based api ⚒
+# WCAG Contrast Util
+Helper function for WCAG contrast criteria
 
 [View full typescript document](https://hikarintu.github.io/WCAG-contrast/) - created by **TypeDoc**
 
+**Features**
+
+- 🌈 color from #HEX with level-4 color support (3,4,6,8 digit)
+- 🎨 flatten multiple translucent colors into one color
+- 📏 Typography helper for large text
+- 💡 Luminance contrast helper with different threshold
+- 📅 More features are coming up...
+
+**What we got**
+
+- Written in TypeScript with docs 📃
+- Fully Tested ✅
+- Ship with tree shakable ES module 📦
+- function based api 🤝
+
 ## Install
-WIP:
 ```
 npm install wcag-contrast-util
 ```
 
 ## Usage
 
+**All-in-one Contrast Function**
 ```js
 import {isAA} from 'wcag-contrast-util'
 
@@ -33,27 +44,4 @@ it('check AA and AAA', () => {
   expect(isAAA(A, '#FFF')).toBe(false)
   expect(isAAA({ ...A, size: 24 }, '#FFF')).toBe(true)
 })
-```
-
-## Develop
-
-> Recommend IDE: Visual Studio Code
-
-**Install Node.js**
-
-Requirement: version >= 14.0
-both 14LTS, 16LTS is recommended.
-
-**Install pnpm**
-Make sure `pnpm` pkg manager is install.
-[Installation Guide](https://pnpm.io/installation)
-
-```
-npm i -g pnpm
-```
-
-**Install dependencies**
-
-```
-pnpm i
 ```
