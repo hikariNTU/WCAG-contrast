@@ -76,6 +76,8 @@ jobs:
       - name: Publish
         if: steps.check.outputs.changed == 'true'
         run: pnpm --filter wcag-contrast-util publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   check-npm:
     runs-on: ubuntu-latest
@@ -100,3 +102,5 @@ jobs:
 
       - name: Check
         run: npm whoami
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
