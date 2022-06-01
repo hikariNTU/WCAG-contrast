@@ -16,7 +16,8 @@
   "packageManager": "pnpm@7.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "version": "npx tsx script/version && git add --all"
   },
   "author": "hikariNTU",
   "license": "MIT",
