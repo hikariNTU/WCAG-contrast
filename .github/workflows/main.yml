@@ -76,3 +76,27 @@ jobs:
       - name: Publish
         if: steps.check.outputs.changed == 'true'
         run: pnpm --filter wcag-contrast-util publish
+
+  check-npm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check version changes
+        uses: EndBug/version-check@v2
+        id: check
+        with:
+          file-name: ./packages/contrast/package.json
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Set node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: pnpm
+
+      - name: Check
+        run: npm whoami
