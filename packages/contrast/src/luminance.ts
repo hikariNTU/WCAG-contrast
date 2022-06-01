@@ -24,12 +24,14 @@ export const standardizeWeight = (c: ColorWeight): ColorWeight =>
  * @param r sRGB red value in 0~1
  * @param g sRGB green value in 0~1
  * @param b sRGB blue value in 0~1
+ * @param _a will be ignore
  * @see https://www.w3.org/TR/WCAG21/#dfn-relative-luminance
  */
 export const toRelativeLuminance = (
   r: ColorWeight,
   g: ColorWeight,
-  b: ColorWeight
+  b: ColorWeight,
+  _a?: ColorWeight
 ): number =>
   R_WEIGHT * standardizeWeight(r) +
   G_WEIGHT * standardizeWeight(g) +

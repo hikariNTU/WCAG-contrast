@@ -17,7 +17,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "vitest",
-    "version": "npx tsx script/version && git add --all"
+    "version": "npx tsx script/version && git add --all",
+    "doc": "pnpm --filter docs build"
   },
   "author": "hikariNTU",
   "license": "MIT",
