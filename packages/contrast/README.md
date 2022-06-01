@@ -1,4 +1,5 @@
 [![CI](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml/badge.svg)](https://github.com/hikariNTU/WCAG-contrast/actions/workflows/main.yml)
+![npm](https://img.shields.io/npm/v/wcag-contrast-util)
 
 # WCAG Contrast Util
 helper function for WCAG contrast criterion
