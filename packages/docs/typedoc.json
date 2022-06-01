@@ -8,5 +8,6 @@
   "tsconfig": "../contrast/tsconfig.json",
   "exclude": [
     "**/*.test.ts"
-  ]
+  ],
+  "readme": "../contrast/README.md"
 }
