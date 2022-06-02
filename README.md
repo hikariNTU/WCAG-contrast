@@ -8,7 +8,7 @@ Helper function for WCAG contrast criteria
 
 **Features**
 
-- 🌈 color from #HEX with level-4 color support (3,4,6,8 digit)
+- 🌈 color from `#HEX` with level-4 color support (3,4,6 and 8 digit)
 - 🎨 flatten multiple translucent colors into one color
 - 📏 Typography helper for large text
 - 💡 Luminance contrast helper with different threshold
@@ -30,7 +30,7 @@ npm install wcag-contrast-util
 
 **All-in-one Contrast Function**
 ```js
-import {isAA} from 'wcag-contrast-util'
+import { isAA } from 'wcag-contrast-util'
 
 it('check AA and AAA', () => {
   // 6.38
