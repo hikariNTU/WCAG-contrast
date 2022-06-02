@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Git
+        uses: actions/checkout@v3
+        with:
+          # to make sure all tag is fetch for releaser
+          fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -28,7 +32,8 @@ jobs:
       - name: Build
         run: pnpm --filter wcag-contrast-util run build
 
-      - run: npx conventional-github-releaser -p angular
+      - run: npx conventional-github-releaser -p angular --draft
+        continue-on-error: true
         env:
           CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
