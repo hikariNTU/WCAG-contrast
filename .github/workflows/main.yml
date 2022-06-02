@@ -31,5 +31,8 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
-      - name: Test
+      - name: Check README.md file is sync
+        run: "pnpm run sync:check"
+
+      - name: Test code
         run: pnpm test run

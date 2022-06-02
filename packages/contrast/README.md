@@ -8,7 +8,7 @@ Helper function for WCAG contrast criteria
 
 **Features**
 
-- 🌈 color from `#HEX` with level-4 color support (3,4,6,8 digit)
+- 🌈 color from `#HEX` with level-4 color support (3,4,6 and 8 digit)
 - 🎨 flatten multiple translucent colors into one color
 - 📏 Typography helper for large text
 - 💡 Luminance contrast helper with different threshold
