@@ -4,10 +4,12 @@
   "entryPoints": [
     "../contrast/src/index.ts"
   ],
-  "out": "dist",
   "tsconfig": "../contrast/tsconfig.json",
   "exclude": [
     "**/*.test.ts"
   ],
-  "readme": "../contrast/README.md"
+  "out": "dist",
+  "customCss": "./assets/override.css",
+  "readme": "../contrast/README.md",
+  "includeVersion": true
 }

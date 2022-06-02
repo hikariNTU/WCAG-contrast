@@ -2,13 +2,16 @@ import { fromHEX } from './color'
 import { toRelativeLuminance } from './luminance'
 import { isLargeText, LargeTextProps } from './typography'
 
+/** @category Contrast */
 export interface TextNodeParam extends LargeTextProps {
   color: string
 }
+/** @category Contrast */
 export type CheckerFunction = (
   text: TextNodeParam,
   background: string
 ) => boolean
+/** @category Contrast */
 export type CriterionThreshold = {
   /** Normal text threshold */
   t1: number
@@ -25,6 +28,7 @@ const AAA_LARGE_THRESHOLD = 4.5
 /**
  * Get luminance contrast ratio for given color set
  * @returns contrast value between `1` to `21` range
+ * @category Contrast
  */
 export const getContrastRatio = (c1: string, c2: string): number => {
   const l1 = toRelativeLuminance(...fromHEX(c1)) + SHIFT
@@ -32,6 +36,7 @@ export const getContrastRatio = (c1: string, c2: string): number => {
   return l1 > l2 ? l1 / l2 : l2 / l1
 }
 
+/** @category Contrast */
 export const isPassCriteria = (
   text: TextNodeParam,
   background: string,
@@ -46,6 +51,7 @@ export const isPassCriteria = (
  * @param text text node given all information
  * @param background background color
  * @returns pass boolean
+ * @category Contrast
  */
 export const isAA: CheckerFunction = (text, background) =>
   isPassCriteria(text, background)
@@ -55,6 +61,7 @@ export const isAA: CheckerFunction = (text, background) =>
  * @param text text node given all information
  * @param background background color
  * @returns pass boolean
+ * @category Contrast
  */
 export const isAAA: CheckerFunction = (text, background) =>
   isPassCriteria(text, background, {

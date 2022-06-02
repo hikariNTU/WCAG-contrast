@@ -1,14 +1,26 @@
+/** @category Color */
 export type R_V = number
+/** @category Color */
 export type G_V = number
+/** @category Color */
 export type B_V = number
+/** @category Color */
 export type A_V = number
+/** @category Color */
 export type SolidRGB = [R_V, G_V, B_V]
+/** @category Color */
 export type RGBA = [R_V, G_V, B_V, A_V]
 
-/** Hex String, can be 3,4,6,8 format with or without '#' */
+/**
+ * Hex String, can be 3,4,6,8 format with or without '#'
+ * @category Color
+ **/
 export type HEX = string
 
-/** Hex code for 3,4,6,8 format with or without '#' */
+/**
+ * Hex code for 3,4,6,8 format with or without '#'
+ * @category Color
+ **/
 export const HEXReg =
   /^#?[0-9a-fA-F]{3,4}$|^#?[0-9a-fA-F]{6}$|^#?[0-9a-fA-F]{8}$/
 
@@ -25,6 +37,7 @@ export const HEXReg =
  * purifyHEX("#FC39C5") // FC39C5ff
  * purifyHEX("12") // ffffffff
  * ```
+ * @category Color
  */
 export const purifyHEX = (hex: HEX, fallback = 'ffffffff') => {
   if (!hex?.length) {
@@ -52,6 +65,7 @@ export const purifyHEX = (hex: HEX, fallback = 'ffffffff') => {
  * Get each channel weight value from HEX code
  * @param hex HEX color string, can omit '#' and support all 3-digit 4-digit, 6-digit, 8-digit color LV4 version.
  * @returns Array of `[R, G, B, A]` value from 0 to 1
+ * @category Color
  */
 export const fromHEX = (hex: HEX): RGBA => {
   const h = purifyHEX(hex)
@@ -69,6 +83,7 @@ export const fromHEX = (hex: HEX): RGBA => {
  * @param c1 Top layer RGBA
  * @param c2 Bottom layer RGBA
  * @returns RGBA merge with alpha channel precomputed. AKA fake transparent.
+ * @category Color
  */
 export const mergeColor = (c1: RGBA | SolidRGB, c2: RGBA | SolidRGB): RGBA => {
   if (c1.length === 3) return [...c1, 1]
@@ -89,6 +104,7 @@ export const mergeColor = (c1: RGBA | SolidRGB, c2: RGBA | SolidRGB): RGBA => {
 
 /**
  * Merge multiple colors into one color
+ *
  * @param args list of RGBA color, in layer descending order, last element is treated as background
  * @returns merged RGBA color, if no input, will return `[0,0,0,0]`
  * @example
@@ -103,6 +119,7 @@ export const mergeColor = (c1: RGBA | SolidRGB, c2: RGBA | SolidRGB): RGBA => {
  *   fromHEX('#000') // black background
  * ) // [ 0.3968, 0.262, 0.1688, 1 ]
  * ```
+ * @category Color
  */
 export const flattenColors = (...args: (RGBA | SolidRGB)[]): RGBA => {
   const init: RGBA = [0, 0, 0, 0]
