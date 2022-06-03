@@ -2,9 +2,18 @@
 [![npm](https://img.shields.io/npm/v/wcag-contrast-util)](https://www.npmjs.com/package/wcag-contrast-util)
 
 # WCAG Contrast Util
-Helper function for WCAG contrast criteria
+Helper functions for WCAG contrast criteria.
 
-[View full typescript document](https://hikarintu.github.io/WCAG-contrast/) - created by **TypeDoc**
+According to [Web Content Accessibility Guidelines (WCAG) 2.1 - #1.4.3 contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum),
+the intent of these Success Criteria are to provide enough contrast between text and its background so that it can be read by people with moderately low vision. Developer should take care of the colors used in website meet these criteria.
+
+**WCAG Contrast Util** provides several utils function to calculate these standard.
+Including [contrast ratio](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html#dfn-contrast-ratio),
+[relative luminance](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html#dfn-relative-luminance),
+[large scale text](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum#dfn-large-scale)
+and also handy utils to transform HEX color, combining multiple translucent color, mapping typography weight keyword and so on.
+
+[View full document](https://hikarintu.github.io/WCAG-contrast/) for more usages- created by **TypeDoc**
 
 **Features**
 
@@ -17,7 +26,7 @@ Helper function for WCAG contrast criteria
 **What we got**
 
 - Written in TypeScript with docs 📃
-- Fully Tested ✅
+- Fully tested ✅
 - Ship with tree shakable ES module 📦
 - function based api 🤝
 
