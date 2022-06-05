@@ -13,7 +13,9 @@ Including [contrast ratio](https://www.w3.org/WAI/WCAG21/Understanding/contrast-
 [large scale text](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum#dfn-large-scale)
 and also handy utils to transform HEX color, combining multiple translucent color, mapping typography weight keyword and so on.
 
-[View full document](https://hikarintu.github.io/WCAG-contrast/) for more usages- created by **TypeDoc**
+[Demo Page](https://hikarintu.github.io/WCAG-contrast/) available for quick test.
+
+[View full document](https://hikarintu.github.io/WCAG-contrast/docs/) for more usages- created by **TypeDoc**
 
 **Features**
 

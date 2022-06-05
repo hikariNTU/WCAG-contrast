@@ -137,3 +137,8 @@ export const flattenColors = (...args: (RGBA | SolidRGB)[]): RGBA => {
 
   return merged as RGBA
 }
+
+const to16 = (n: number) => n.toString(16).padStart(2, '0')
+
+export const toHEX = (color: SolidRGB | RGBA): string =>
+  `#${color.map((v) => to16(Math.floor(v * 255))).join('')}`
