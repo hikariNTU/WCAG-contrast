@@ -39,7 +39,7 @@ jobs:
         run: pnpm --filter demo build
 
       - name: Copy Docs to demo
-        run: pnpm docs:copy
+        run: pnpm doc:copy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
