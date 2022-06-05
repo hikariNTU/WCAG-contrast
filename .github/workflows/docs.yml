@@ -34,12 +34,12 @@ jobs:
 
       - name: Build Docs
         run: pnpm doc
-      
+
+      - name: Copy Docs to demo source
+        run: pnpm doc:copy
+
       - name: Build Demo
         run: pnpm --filter demo build
-
-      - name: Copy Docs to demo
-        run: pnpm doc:copy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
