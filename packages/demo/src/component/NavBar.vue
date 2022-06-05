@@ -12,7 +12,7 @@
     </div>
     <div class="nav-links">
       <IconLink
-        href="./doc"
+        href="./docs"
         title="Document"
       >
         <img

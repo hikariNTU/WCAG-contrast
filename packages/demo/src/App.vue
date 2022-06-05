@@ -14,14 +14,23 @@
         }
       "
     />
-    <img
-      src="@/assets/img/under-construction.svg"
-      alt="under-construction"
-      height="128"
+    <div
       :style="{
-        margin: '16px auto'
+        margin: '16px auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4px',
       }"
-    />
+    >
+      <img
+        src="@/assets/img/under-construction.svg"
+        alt="under-construction"
+        height="128"
+      />
+      <p>
+        Try the functions exposed in console named <code>ContrastUtil</code> object.
+      </p>
+    </div>
     <ColorTemplate />
   </div>
 </template>
@@ -32,7 +41,8 @@ import LinearTitle from './component/LinearTitle.vue'
 import ColorTemplate from './component/ColorTemplate.vue'
 </script>
 
-<style lang="scss" src="./assets/style.scss"></style>
+<style lang="scss" src="./assets/style.scss">
+</style>
 
 <style lang="scss">
 .container {

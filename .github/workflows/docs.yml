@@ -27,13 +27,19 @@ jobs:
           cache: pnpm
 
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build Docs
-        run: pnpm --filter docs build
+        run: pnpm doc
+      
+      - name: Build Demo
+        run: pnpm --filter demo build
+
+      - name: Copy Docs to demo
+        run: pnpm docs:copy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: docs
-          folder: packages/docs/dist
+          folder: packages/demo/dist

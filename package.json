@@ -20,7 +20,8 @@
     "sync": "npx tsx script/syncReadme.ts",
     "sync:check": "npx tsx script/syncReadme.ts --check",
     "version": "npx tsx script/version && git add --all",
-    "doc": "pnpm --filter docs build"
+    "doc": "pnpm --filter docs build",
+    "doc:copy": "npx tsx script/copyDocs.ts"
   },
   "author": "hikariNTU",
   "license": "MIT",
