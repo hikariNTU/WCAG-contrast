@@ -29,6 +29,9 @@ jobs:
       - name: Install
         run: pnpm install
 
+      - name: Build Local Package
+        run: pnpm --filter wcag-contrast-util build
+
       - name: Build Docs
         run: pnpm doc
       
