@@ -1,20 +1,3 @@
-:root {
-  --bd-style: solid 1px #8883;
-  --scrollbar-width: 12px;
-  --dark-color-panel-divider: #444;
-}
-
-.tsd-page-title {
-  box-shadow: none;
-  border-bottom: var(--bd-style);
-}
-
-.tsd-panel {
-  box-shadow: none;
-  border: var(--bd-style);
-  border-radius: 8px;
-}
-
 *::-webkit-scrollbar {
   width: var(--scrollbar-width);
   height: var(--scrollbar-width);

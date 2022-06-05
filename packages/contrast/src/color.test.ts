@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { flattenColors, fromHEX, mergeColor, purifyHEX, RGBA } from './color'
+import {
+  flattenColors,
+  fromHEX,
+  mergeColor,
+  purifyHEX,
+  RGBA,
+  toHEX,
+} from './color'
 
 const isCloseColor = (input: RGBA, expectColor: RGBA) => {
   expect(input?.length).toBe(4)
@@ -73,5 +80,9 @@ describe('color', () => {
       flattenColors(RED_C22_30, GREEN_3B6_40, RED_C22_30, solidBlack),
       fromHEX(RED_GREEN_RED_BLACK_BG)
     )
+  })
+
+  it('toHEX', () => {
+    expect(toHEX([0.1, 0.5, 1])).toBe('#197fff')
   })
 })

@@ -1,0 +1,43 @@
+@import "./reset.css";
+@import "./scrollbar.css";
+@import "./tooltip.scss";
+
+:root {
+  --bd: solid 1px #8883;
+  --dark-bg: #333;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Inter", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+.text-limit {
+  max-width: 80ch;
+}
